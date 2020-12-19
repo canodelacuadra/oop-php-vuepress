@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Métodos estáticos | Orientación a Objetos en PHP</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="Apuntes, ejemplos y actividades">
+    
+    <link rel="preload" href="/oop-php-vuepress/assets/css/0.styles.20540af0.css" as="style"><link rel="preload" href="/oop-php-vuepress/assets/js/app.19e44a2d.js" as="script"><link rel="preload" href="/oop-php-vuepress/assets/js/2.27cbb0eb.js" as="script"><link rel="preload" href="/oop-php-vuepress/assets/js/15.13fb4583.js" as="script"><link rel="prefetch" href="/oop-php-vuepress/assets/js/10.2b5474b2.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/11.3a3bed1b.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/12.c6e048ee.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/13.bd3169e1.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/14.e07b3183.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/16.b9d8bf24.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/17.79da625e.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/18.2067ad56.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/19.8f851c36.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/20.63230104.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/21.d66ddec6.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/3.42d2c0c5.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/4.501538cc.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/5.b2ec7c3b.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/6.c6c8e957.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/7.174ec3fa.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/8.cc86cea1.js"><link rel="prefetch" href="/oop-php-vuepress/assets/js/9.21a5112d.js">
+    <link rel="stylesheet" href="/oop-php-vuepress/assets/css/0.styles.20540af0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/oop-php-vuepress/" class="home-link router-link-active"><!----> <span class="site-name">Orientación a Objetos en PHP</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/oop-php-vuepress/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://canodelacuadra.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/canodelacuadra/oop-php-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/oop-php-vuepress/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://canodelacuadra.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/canodelacuadra/oop-php-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/oop-php-vuepress/oop.html" class="sidebar-link">Nociones de OOP</a></li><li><a href="/oop-php-vuepress/crear-clases-instanciar.html" class="sidebar-link">Creación de Clases y Objetos</a></li><li><a href="/oop-php-vuepress/constructor.html" class="sidebar-link">Función constructora (y destructora)</a></li><li><a href="/oop-php-vuepress/encapsulamiento.html" class="sidebar-link">Encapsulamiento y Ocultación </a></li><li><a href="/oop-php-vuepress/herencia.html" class="sidebar-link">Herencia </a></li><li><a href="/oop-php-vuepress/clases-abstractas.html" class="sidebar-link">Clases Abstractas </a></li><li><a href="/oop-php-vuepress/interfaces.html" class="sidebar-link">Interfaces </a></li><li><a href="/oop-php-vuepress/traits.html" class="sidebar-link">Traits </a></li><li><a href="/oop-php-vuepress/constantes.html" class="sidebar-link">Constantes </a></li><li><a href="/oop-php-vuepress/estaticos.html" aria-current="page" class="active sidebar-link">Métodos y Propiedades estáticas </a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/oop-php-vuepress/estaticos.html#metodos-estaticos" class="sidebar-link">Métodos estáticos</a></li><li class="sidebar-sub-header"><a href="/oop-php-vuepress/estaticos.html#propiedades-estaticas" class="sidebar-link">Propiedades estáticas</a></li></ul></li><li><a href="/oop-php-vuepress/espaciosdenombres.html" class="sidebar-link">Espacios de Nombres </a></li><li><a href="/oop-php-vuepress/iterable.html" class="sidebar-link">Pseudotipo Iterable</a></li><li><a href="/oop-php-vuepress/excepciones.html" class="sidebar-link">Excepciones</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="metodos-estaticos"><a href="#metodos-estaticos" class="header-anchor">#</a> Métodos estáticos</h2> <p>Los métodos estáticos se pueden llamar directamente, sin crear primero una instancia de la clase, es decir, un objeto.</p> <p>Los métodos estáticos se declaran con la  palabra clave <code>static</code></p> <p>Sintaxis</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">ClassName</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">staticMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token double-quoted-string string">&quot;Hola Mundo!&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token delimiter important">?&gt;</span></span>
+
+</code></pre></div><p>Para acceder a un método estático, utilizamos el nombre de la clase, dos puntos dobles (:😃 y el nombre del método:</p> <p>Sintaxis</p> <div class="language-php extra-class"><pre class="language-php"><code>ClassName<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">staticMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>Veamos un ejemplo:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">greeting</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">welcome</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token double-quoted-string string">&quot;Hello World!&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Call static method</span>
+greeting<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">welcome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?&gt;</span></span>
+
+</code></pre></div><p>Aquí, declaramos un método estático: welcome (). Luego, llamamos al método estático usando el nombre de la clase, dos puntos dobles (:😃 y el nombre del método (sin crear primero una instancia de la clase).</p> <h3 id="¡mas-sobre-metodos-estaticos"><a href="#¡mas-sobre-metodos-estaticos" class="header-anchor">#</a> ¡Más sobre métodos estáticos</h3> <p>Una clase puede tener métodos tanto estáticos como no estáticos. Se puede acceder a un método estático desde un método de la misma clase utilizando la  palabra clave self y dos puntos dobles (:😃:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">greeting</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">welcome</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token double-quoted-string string">&quot;Hello World!&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    self<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">welcome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">new</span> <span class="token class-name">greeting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?&gt;</span></span>
+
+</code></pre></div><p>Los métodos estáticos también se pueden llamar desde métodos de otras clases. Para hacer esto, el método estático debe ser public:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">greeting</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">welcome</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token double-quoted-string string">&quot;Hello World!&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SomeOtherClass</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">message</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    greeting<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">welcome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token delimiter important">?&gt;</span></span>
+
+</code></pre></div><p>Para llamar a un método estático desde una clase secundaria, use la  palabra clave <code>parent</code>dentro de la clase secundaria. Aquí, el método estático puede ser public o protected.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">domain</span> <span class="token punctuation">{</span>
+  <span class="token keyword">protected</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">getWebsiteName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token double-quoted-string string">&quot;W3Schools.com&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">domainW3</span> <span class="token keyword">extends</span> <span class="token class-name">domain</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token variable">$websiteName</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">websiteName</span> <span class="token operator">=</span> <span class="token keyword">parent</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">getWebsiteName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token variable">$domainW3</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">domainW3</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token variable">$domainW3</span> <span class="token operator">-</span><span class="token operator">&gt;</span> websiteName<span class="token punctuation">;</span>
+<span class="token delimiter important">?&gt;</span></span>
+
+</code></pre></div><h2 id="propiedades-estaticas"><a href="#propiedades-estaticas" class="header-anchor">#</a> Propiedades estáticas</h2> <p>Las propiedades estáticas se pueden llamar directamente, sin crear una instancia de una clase.</p> <p>Las propiedades estáticas se declaran con la  palabra clave static:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">ClassName</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token variable">$staticProp</span> <span class="token operator">=</span> <span class="token double-quoted-string string">&quot;W3Schools&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token delimiter important">?&gt;</span></span>
+
+</code></pre></div><p>Para acceder a una propiedad estática, usamos el nombre de la clase, dos puntos dobles (:😃 y el nombre de la propiedad:</p> <p>Sintaxis</p> <div class="language-php extra-class"><pre class="language-php"><code>ClassName<span class="token punctuation">:</span><span class="token punctuation">:</span>staticProp<span class="token punctuation">;</span>
+</code></pre></div><p>Veamos un ejemplo:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">pi</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token variable">$value</span> <span class="token operator">=</span> <span class="token number">3.14159</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Get static property</span>
+<span class="token keyword">echo</span> pi<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token variable">$value</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?&gt;</span></span>
+
+</code></pre></div><p>Aquí, declaramos una propiedad estática: $ valor. Luego, hacemos eco del valor de la propiedad estática usando el nombre de la clase, dos puntos dobles (:😃 y el nombre de la propiedad (sin crear una clase primero).</p> <h3 id="php-mas-sobre-propiedades-estaticas"><a href="#php-mas-sobre-propiedades-estaticas" class="header-anchor">#</a> PHP - Más sobre propiedades estáticas</h3> <p>Una clase puede tener propiedades estáticas y no estáticas. Se puede acceder a una propiedad estática desde un método en la misma clase usando la self palabra clave y dos puntos dobles (:😃</p> <p>Ejemplo</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">pi</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token variable">$value</span><span class="token operator">=</span><span class="token number">3.14159</span><span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">staticValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token variable">$value</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token variable">$pi</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">pi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token variable">$pi</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">staticValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?&gt;</span></span>
+
+</code></pre></div><p>Para llamar a una propiedad estática en una clase hija, use la parent palabra clave dentro de la clase secundaria:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">class</span> <span class="token class-name">pi</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token variable">$value</span><span class="token operator">=</span><span class="token number">3.14159</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">x</span> <span class="token keyword">extends</span> <span class="token class-name">pi</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">xStatic</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">parent</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token variable">$value</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Get value of static property directly via child class</span>
+<span class="token keyword">echo</span> x<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token variable">$value</span><span class="token punctuation">;</span>
+
+<span class="token comment">// or get value of static property via xStatic() method</span>
+<span class="token variable">$x</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token variable">$x</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">xStatic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?&gt;</span></span>
+
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/canodelacuadra/oop-php-vuepress/edit/master/gh-pages/estaticos.md" target="_blank" rel="noopener noreferrer">Editar en GitHub</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/oop-php-vuepress/constantes.html" class="prev">
+        Constantes 
+      </a></span> <span class="next"><a href="/oop-php-vuepress/espaciosdenombres.html">
+        Espacios de Nombres 
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/oop-php-vuepress/assets/js/app.19e44a2d.js" defer></script><script src="/oop-php-vuepress/assets/js/2.27cbb0eb.js" defer></script><script src="/oop-php-vuepress/assets/js/15.13fb4583.js" defer></script>
+  </body>
+</html>
